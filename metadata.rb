@@ -1,0 +1,12 @@
+name 'workshopbox_doc-doc'
+maintainer 'Alexander Birk'
+maintainer_email 'birk@pingworks.de'
+license 'Apache 2.0'
+description 'Installs/Configures workshopbox_doc Appliance'
+long_description 'Installs/Configures workshopbox_doc Appliance'
+version '0.1.0'
+
+depends 'apt'
+depends 'ohai'
+depends 'secret_service', '~> 0.1.18'
+depends 'pw_testhelper'
