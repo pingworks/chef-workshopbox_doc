@@ -7,5 +7,8 @@ default['workshopbox_doc']['domain'] = 'ws.net'
 
 default['workshopbox_doc']['adminuser']['username'] = 'vagrant'
 
+default['workshopbox_doc']['urubu-tpl']['giturl'] = 'https://github.com/pingworks/urubu-tpl.git'
+default['workshopbox_doc']['urubu-tpl']['version'] = '0.1.0'
+
 # needed for custom ohai plugins
 default['ohai']['plugins']['workshopbox_doc'] = 'plugins'

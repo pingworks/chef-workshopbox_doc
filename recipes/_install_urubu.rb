@@ -15,3 +15,22 @@ bash 'install urubu' do
   pip install urubu
   EOH
 end
+
+directory '/var/cache/urubu' do
+  owner 'root'
+  group 'root'
+  mode 00755
+  recursive true
+  action :create
+end
+
+bash 'clone urubu-tpl' do
+  user 'root'
+  cwd '/tmp'
+  code <<-EOH
+    cd /var/cache/urubu
+    git clone #{node['workshopbox_doc']['urubu-tpl']['giturl']}
+    git checkout tags/v#{node['workshopbox_doc']['urubu-tpl']['version']}
+  EOH
+  not_if File.directory?('/var/cache/urubu/urubu-tpl')
+end
