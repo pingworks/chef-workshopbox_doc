@@ -6,4 +6,4 @@
 # Licensed under the Apache License, Version 2.0
 #
 
-package 'nginx'
+include_recipe 'nginx::default'

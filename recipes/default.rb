@@ -9,5 +9,5 @@
 
 include_recipe 'ohai'
 
-include_recipe 'workshopbox_doc::_install_nginx'
-include_recipe 'workshopbox_doc::_install_urubu'
+include_recipe 'workshopbox_doc::_nginx'
+include_recipe 'workshopbox_doc::_urubu_workshopbox_doc'

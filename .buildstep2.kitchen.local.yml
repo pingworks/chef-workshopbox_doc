@@ -9,8 +9,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[secret_service::default]
+      - recipe[workshopbox_doc::default]
+      - recipe[pw_testhelper::default]
     attributes:
-      secret_service:
-        domain: __WORKSHOP_NAME__
-        accessuser: __WORKSHOP_ACCESSUSER__
