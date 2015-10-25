@@ -5,7 +5,7 @@
 #
 # Licensed under the Apache License, Version 2.0
 #
-include_recipe 'nginx::default'
+package 'nginx'
 
 service 'nginx' do
   supports :status => :true, :restart => :true, :reload => :true

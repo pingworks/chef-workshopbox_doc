@@ -8,6 +8,5 @@ version '0.1.2'
 
 depends 'apt'
 depends 'ohai'
-depends 'nginx', '~> 2.7.6'
 depends 'secret_service'
 depends 'pw_testhelper'
