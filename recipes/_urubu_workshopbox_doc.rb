@@ -33,10 +33,12 @@ bash 'clone urubu-workshopbox_doc' do
     if [ ! -d urubu-workshopbox_doc ];then
       git clone #{node['workshopbox_doc']['urubu-workshopbox_doc']['giturl']} urubu-workshopbox_doc
     fi
-    if [ ! "#{node['workshopbox_doc']['urubu-workshopbox_doc']['version']}" = "HEAD" ];then
-      cd urubu-workshopbox_doc
+    cd urubu-workshopbox_doc
+    if [ "#{node['workshopbox_doc']['urubu-workshopbox_doc']['version']}" = "HEAD" ];then
+      git pull origin master
+    else
+      git fetch origin master
       git checkout tags/v#{node['workshopbox_doc']['urubu-workshopbox_doc']['version']}
     fi
   EOH
-  not_if { ::File.directory?('/var/cache/urubu/urubu-tpl') }
 end
