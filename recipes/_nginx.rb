@@ -19,3 +19,11 @@ template '/etc/nginx/sites-available/default' do
   mode 00644
   notifies :reload, 'service[nginx]', :immediately
 end
+
+file '/usr/share/nginx/html/index.html' do
+  action :delete
+end
+
+file '/usr/share/nginx/html/50x.html' do
+  action :delete
+end

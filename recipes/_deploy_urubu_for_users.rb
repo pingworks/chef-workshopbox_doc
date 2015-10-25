@@ -24,8 +24,8 @@ Dir.foreach(node['workshopbox_doc']['secret_service']['client']['repo'] + '/user
       sed -i -e "s/__user__/#{username}/g;s/__user_firstname__/$USER_FIRSTNAME/g;s/__user_lastname__/$USER_LASTNAME/g;s/__user_company__/$USER_COMPANY/g;s/__user_email__/$USER_EMAIL/g;s/__wsappl_name__/$WSAPPL_NAME/g;s/__wsappl_doc_version__/$WSAPPL_DOC_VERSION/g" /var/cache/urubu/#{username}/{index.md,_site.yml}
       cd /var/cache/urubu/#{username}
       make
-      [ ! -d /var/www/nginx-default/#{username} ] && mkdir /var/www/nginx-default/#{username}
-      rsync -avx --delete _build/ /var/www/nginx-default/#{username}/
+      [ ! -d /usr/share/nginx/html/#{username} ] && mkdir /usr/share/nginx/html/#{username}
+      rsync -avx --delete _build/ /usr/share/nginx/html/#{username}/
     EOH
   end
 
