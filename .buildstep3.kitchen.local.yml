@@ -13,8 +13,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[workshopbox_doc::default]
-      - recipe[pw_testhelper::default]
+      - recipe[workshopbox_doc::build]
     attributes:
       workshopbox_doc:
         workshop_name: __WORKSHOP_NAME__
