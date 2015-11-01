@@ -6,8 +6,12 @@
 # Licensed under the Apache License, Version 2.0
 #
 
-unless File.directory?(node['workshopbox_doc']['build']['target'])
-  fail Chef::Exceptions::FileNotFound, "Target dir #{node['workshopbox_doc']['build']['target']} not found!"
+directory node['workshopbox_doc']['build']['target'] do
+  owner 'root'
+  group 'root'
+  mode 00755
+  recursive true
+  action :create
 end
 
 bash 'pack' do
