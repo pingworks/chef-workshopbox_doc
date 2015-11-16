@@ -16,3 +16,4 @@ suites:
     attributes:
       workshopbox_doc:
         workshop_name: __WORKSHOP_NAME__
+        build_number: __BUILD_NUMBER__
