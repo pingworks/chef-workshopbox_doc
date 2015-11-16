@@ -19,9 +19,8 @@ Dir.foreach(node['workshopbox_doc']['secret_service']['client']['repo'] + '/user
       USER_LASTNAME=$(< #{node['workshopbox_doc']['secret_service']['client']['repo']}/user/#{username}/lastname)
       USER_COMPANY=$(< #{node['workshopbox_doc']['secret_service']['client']['repo']}/user/#{username}/company)
       USER_EMAIL=$(< #{node['workshopbox_doc']['secret_service']['client']['repo']}/user/#{username}/email)
-      WSAPPL_NAME=$(echo 'appl name 123')
-      WSAPPL_DOC_VERSION=$(echo 'vivaversion 1234')
-      sed -i -e "s/__user__/#{username}/g;s/__user_firstname__/$USER_FIRSTNAME/g;s/__user_lastname__/$USER_LASTNAME/g;s/__user_company__/$USER_COMPANY/g;s/__user_email__/$USER_EMAIL/g;s/__wsappl_name__/$WSAPPL_NAME/g;s/__wsappl_doc_version__/$WSAPPL_DOC_VERSION/g" /var/cache/urubu/#{username}/{index.md,_site.yml}
+      sed -i "s/__user__/#{username}/g;s/__user_firstname__/$USER_FIRSTNAME/g;s/__user_lastname__/$USER_LASTNAME/g;s/__user_company__/$USER_COMPANY/g;s/__user_email__/$USER_EMAIL/g" /var/cache/urubu/#{username}/_site.yml
+      sed -i "s/__user__/#{username}/g;s/__user_firstname__/$USER_FIRSTNAME/g;s/__user_lastname__/$USER_LASTNAME/g;s/__user_company__/$USER_COMPANY/g;s/__user_email__/$USER_EMAIL/g" /var/cache/urubu/#{username}/_layouts/footer.html
       cd /var/cache/urubu/#{username}
       make
       [ ! -d /usr/share/nginx/html/#{username} ] && mkdir /usr/share/nginx/html/#{username}
