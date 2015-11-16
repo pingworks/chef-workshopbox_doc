@@ -47,7 +47,7 @@ bash 'substitute version number' do
   user 'root'
   cwd '/var/cache/urubu/urubu-workshopbox_doc'
   code <<-EOH
-  VERSION="#{node['workshopbox_doc']['urubu-workshopbox_doc']['build_number']}+git$(git ref-parse --short HEAD)"
+  VERSION="#{node['workshopbox_doc']['build_number']}+git$(git rev-parse --short HEAD)"
   sed -i "s;__VERSION__;${VERSION};g" _layouts/footer.html
   EOH
 end

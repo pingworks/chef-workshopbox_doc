@@ -10,7 +10,7 @@ default['workshopbox_doc']['adminuser']['username'] = 'vagrant'
 
 default['workshopbox_doc']['urubu-workshopbox_doc']['giturl'] = 'https://github.com/pingworks/urubu-workshopbox_doc.git'
 default['workshopbox_doc']['urubu-workshopbox_doc']['version'] = 'HEAD'
-default['workshopbox_doc']['urubu-workshopbox_doc']['build_number'] = '0'
+default['workshopbox_doc']['build_number'] = '0'
 
 default['workshopbox_doc']['build']['target'] = '/target'
 
