@@ -8,7 +8,7 @@
 #
 
 include_recipe 'ohai'
-
+include_recipe 'apt'
 include_recipe 'workshopbox_doc::_nginx'
 include_recipe 'workshopbox_doc::_urubu_workshopbox_doc'
 include_recipe 'workshopbox_doc::_deploy_urubu_for_users'
