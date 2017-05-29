@@ -1,4 +1,17 @@
 ---
+driver:
+  name: vagrant
+  customize:
+    memory: 4096
+    vram: 64
+    natdnshostresolver1: "on"
+    natdnsproxy1: "on"
+    nictype1: "virtio"
+
+provisioner:
+  name: chef_solo
+  require_chef_omnibus: false
+
 platforms:
   - name: ubuntu-16.04
     driver:
