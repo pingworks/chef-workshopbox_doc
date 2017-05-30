@@ -4,7 +4,7 @@
 default['workshopbox_doc']['secret_service']['client']['repo'] = '/var/lib/secret-service'
 default['workshopbox_doc']['secret_service']['client']['user'] = 'root'
 
-default['workshopbox_doc']['domain'] = 'cluster.local'
+default['workshopbox_doc']['domain'] = 'k8s.ws.p7-s.net'
 
 default['workshopbox_doc']['adminuser']['username'] = 'vagrant'
 
